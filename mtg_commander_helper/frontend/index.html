@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTG Commander Helper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MTG Commander Helper</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Digite o nome da carta...">
+                <button onclick="searchCard()">Buscar</button>
+                <button onclick="getRandomCard()">Carta Aleatória</button>
+            </div>
+            <div class="deck-upload-container">
+                <h2>Importar Deck</h2>
+                <div class="upload-options">
+                    <div class="file-upload">
+                        <input type="file" id="deckFile" accept=".txt">
+                        <button onclick="uploadDeckFile()">Enviar Arquivo</button>
+                    </div>
+                    <div class="text-input">
+                        <textarea id="deckText" placeholder="Ou cole a lista do deck aqui..."></textarea>
+                        <button onclick="processDeckText()">Processar Deck</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="paginationControls" class="pagination-controls" style="display: flex;">
+                <button id="previousPage" onclick="previousPage()">Anterior</button>
+                <span id="currentPage">Página 1</span>
+                <button id="nextPage" onclick="nextPage()">Próxima</button>
+            </div>
+            <div id="cardContainer" class="card-container">
+                <!-- Cards will be displayed here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
